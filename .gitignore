@@ -1,0 +1,14 @@
+# Root .gitignore for BuildWise Repo
+
+# Exclude unnecessary research and reference files
+BuildWise_Research-References/
+Skills/
+convex/
+.agents/
+
+# Exclude agent-specific files
+GEMINI.md
+CHECKLIST.md
+
+# Application folders will be included
+# (git will automatically find and follow the .gitignore inside buildwise-dashboard/)

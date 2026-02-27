@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base configuration - Preset A (Field Daylight) */
+    --font-ui: 'Inter', sans-serif;
+    --font-data: 'IBM Plex Mono', monospace;
+
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --primary: #f97316; /* Safety Orange */
+    --primary-foreground: #ffffff;
+    --muted: #e2e8f0;
+    --muted-foreground: #64748b;
+    --border: #cbd5e1;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --danger: #ef4444;
+
+    /* Spacing / Density (Medium) */
+    --density-p: 1rem;
+    --density-gap: 1.5rem;
+  }
+
+  [data-theme="night-shift"] {
+    --font-ui: 'Inter', sans-serif;
+    --font-data: 'JetBrains Mono', monospace;
+
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --primary: #c084fc; /* Muted Violet */
+    --primary-foreground: #ffffff;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #3f3f46;
+    --accent: #27272a;
+    --accent-foreground: #fafafa;
+    --danger: #f87171;
+
+    /* Spacing / Density (High) */
+    --density-p: 0.75rem;
+    --density-gap: 1rem;
+  }
+
+  [data-theme="high-contrast"] {
+    --font-ui: 'Atkinson Hyperlegible', sans-serif;
+    --font-data: 'Source Code Pro', monospace;
+
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --primary: #0000ff; /* Vivid Blue */
+    --primary-foreground: #ffffff;
+    --muted: #ffffff;
+    --muted-foreground: #000000;
+    --border: #000000;
+    --accent: #000000;
+    --accent-foreground: #ffffff;
+    --danger: #ff0000;
+
+    /* Spacing / Density (Medium) */
+    --density-p: 1rem;
+    --density-gap: 1.5rem;
+  }
+
+  [data-theme="calm-concrete"] {
+    --font-ui: 'Space Grotesk', sans-serif;
+    --font-data: 'Space Mono', monospace;
+
+    --background: #e7e5e4; /* Warm Gray */
+    --foreground: #292524;
+    --card: #f5f5f4;
+    --card-foreground: #292524;
+    --primary: #dc2626; /* Signal Red */
+    --primary-foreground: #ffffff;
+    --muted: #d6d3d1;
+    --muted-foreground: #57534e;
+    --border: #a8a29e;
+    --accent: #d6d3d1;
+    --accent-foreground: #292524;
+    --danger: #b91c1c;
+
+    /* Spacing / Density (Medium-High) */
+    --density-p: 0.875rem;
+    --density-gap: 1.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground bg-background;
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Accessibility Focus Rings */
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  .font-data {
+    font-family: var(--font-data);
+  }
+}
